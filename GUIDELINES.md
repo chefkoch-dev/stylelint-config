@@ -3,8 +3,6 @@
 CSS is mainly written via Sass pre-processor at Chefkoch, though some projects may deviate from this. We follow a cherry-picked mixture of [cssguidelin.es](http://cssguidelin.es) and [sass-guidelin.es](http://sass-guidelin.es) for writing our SCSS files.
 All example snippets are sourced from [sass-guidelin.es](http://sass-guidelin.es/) / created by [Hugo Giraudel](http://hugogiraudel.com/) / [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en)
 
-
-
 ### Syntax and Formatting
 
 At a very high-level, we want:
@@ -29,7 +27,6 @@ At a very high-level, we want:
 }
 ```
 
-
 ### Quotes
 
 Although neither CSS nor Sass do require strings to be quoted, we recommend that **strings should always be wrapped with single quotes** (`'`) in Sass. Besides consistency with other languages, including CSS’ cousin JavaScript, there are several reasons for this choice:
@@ -47,7 +44,6 @@ $direction: 'left';
 $direction: left;
 ```
 
-
 #### Exceptions for quotes
 
 ```
@@ -57,8 +53,6 @@ $font-type: sans-serif;
 // Nope
 $font-type: 'sans-serif';
 ```
-
-
 
 #### Strings containing quotes
 
@@ -71,8 +65,6 @@ If a string contains one or several single quotes, one might consider wrapping t
 // Okay
 @warn "You can't do that.";
 ```
-
-
 
 ### URLs
 
@@ -90,13 +82,9 @@ URLs should be quoted as well, for the same reasons as above:
 }
 ```
 
-
-
 ### Numbers
 
 In Sass, _number_ is a data type including everything from unitless numbers to lengths, durations, frequencies, angles and so on. This allows calculations to be run on such measures.
-
-
 
 #### Zeros
 
@@ -116,8 +104,6 @@ Numbers should display leading zeros before a decimal value less than one. Never
 }
 ```
 
-
-
 #### Units
 
 When dealing with lengths, a 0 value should never ever have a unit.
@@ -134,8 +120,6 @@ Beware, this practice should be limited to lengths only. Having a unitless zero 
 
 **Note:** There are more good practices dealing with numbers at [http://sass-guidelin.es/#numbers](http://sass-guidelin.es/#numbers) and we recommend to follow them.
 
-
-
 ### Colors and Variables
 
 When using a color more than once, store it in a variable (prefixed with `$color-`) with a standardized name representing the color like `$color-sushi` (use [chir.ag's Name That Color](http://chir.ag/projects/name-that-color/#7BA344) to find the name). Since this method leads to unique color names which we do not want to spread around our code base (cannot reuse when the color changes), you need to map this color to an abstract second variable like `$color-brand-primary.` David Walsh has explained at length why this seemingly convoluted approach is a good idea: [Sass Color Variables That Don’t Suck](https://davidwalsh.name/sass-color-variables-dont-suck).
@@ -148,18 +132,17 @@ $color-sushi: #7ba344;
 $color-brand-primary: $color-sushi;
 ```
 
-
 ### The actual (S)CSS Ruleset
 
 Here is how a (S)CSS ruleset should be written (at least, according to most guidelines, including [cssguidelin.es](http://cssguidelin.es/#anatomy-of-a-ruleset)):
 
 *   related selectors on the same line; unrelated selectors on new lines
-*   the opening brace ({) spaced from the last selector by a single space
+*   the opening brace (`{`) spaced from the last selector by a single space
 *   each declaration on its own new line
-*   a space after the colon (:)
-*   a trailing semi-colon (;) at the end of all declarations
-*   the closing brace (}) on its own new line
-*   a new line after the closing brace `}  
+*   a space after the colon (`:`)
+*   a trailing semi-colon (`;`) at the end of all declarations
+*   the closing brace (`}`) on its own new line
+*   a new line after the closing brace (`}`)
 
 ```
 // Yep
@@ -209,13 +192,9 @@ Adding to those CSS-related guidelines, we want to pay attention to:
 }
 ```
 
-
-
 ### Declaration Sorting
 
 There is a lot of [discussion](http://css-tricks.com/poll-results-how-do-you-order-your-css-properties/) around the [order of declarations](http://sass-guidelin.es/#declaration-sorting). The different factions are _alphabetical order_, _order by type_ and _fuck it, random_. Find an approach that works for you and your team until we have implemented automated declaration sorting with either [csscomb.com](http://csscomb.com) or [stylelint.io](http://stylelint.io/) (with [stylefmt](https://github.com/morishitter/stylefmt)).
-
-
 
 ### Selector Nesting
 
@@ -224,8 +203,6 @@ One particular feature Sass provides that is being overly misused by many develo
 We recommend to **avoid selector nesting as much as** **possible** for reasons given in [Beware of Selector Nesting](http://www.sitepoint.com/beware-selector-nesting-sass/) and [Avoid nested selectors for more modular CSS](http://thesassway.com/intermediate/avoid-nested-selectors-for-more-modular-css) (tl;dr: better reuse, better maintainability). The [BEM naming convention](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) for HTML classes helps a lot in this regard. 
 
 It can make sense to use moderate nesting, but please keep to [the Inception rule](http://thesassway.com/beginner/the-inception-rule)(never nest more than 3 levels deep).
-
-
 
 #### Exceptions
 
@@ -275,8 +252,6 @@ This will compile to:
 }
 ```
 
-
-
 ### Naming Conventions
 
 We recommend to closely follow the naming conventions proposed by [cssguidelin.es](http://cssguidelin.es/#naming-conventions), especially **BEM-like Naming**.
@@ -297,9 +272,9 @@ To take an analogy (note, not an example):
 .person--tall {}
 ```
 
-Elements are delimited with two (2) underscores (__), and Modifiers are delimited by two (2) hyphens (--).
+Elements are delimited with two (2) underscores (`__`), and Modifiers are delimited by two (2) hyphens (`--`).
 
-Here we can see that .person {} is the Block; it is the sole root of a discrete entity..person__head {} is an Element; it is a smaller part of the .person {} Block. Finally, .person--tall {} is a Modifier; it is a specific variant of the `.person {}` Block.
+Here we can see that `.person {}` is the Block; it is the sole root of a discrete entity. `.person__head {}` is an Element; it is a smaller part of the `.person {}` Block. Finally, `.person--tall {}` is a Modifier; it is a specific variant of the `.person {}` Block.
 
 **Please note: **If we were to add another Element—called, let’s say, `.person__eye {}`—to this `.person {}` component, we would not need to step through every layer of the DOM. That is to say, the correct notation would be `.person__eye {}`, and not `.person__head__eye {}`. Your classes do not reflect the full paper-trail of the DOM.
 
