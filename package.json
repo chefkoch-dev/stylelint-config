@@ -6,5 +6,8 @@
   "repository": {
     "type": "git",
     "url": "ssh://git@jira.chefkoch.de:7999/geist/chefkoch-style-linting.git"
+  },
+  "peerDependencies": {
+    "stylelint": "^8.0.0"
   }
 }
