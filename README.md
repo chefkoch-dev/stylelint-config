@@ -1,4 +1,4 @@
-##Installation
+## Installation
 Install the required dependencies into your project:
 
 ```
@@ -13,7 +13,7 @@ Create a `.stylelintrc` configuration file in your project root directory with f
 }
 ```
 
-##CLI Usage
+## CLI Usage
 You are now able to call the command line interface of stylelint:
 ```
 node_modules/.bin/stylelint <path to sccs files>
