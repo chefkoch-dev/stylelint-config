@@ -114,7 +114,7 @@ module.exports = {
         "selector-max-compound-selectors": 3,
         "selector-max-empty-lines": 0,
         "selector-max-specificity": "0,4,0",
-        "selector-no-id": true,
+        "selector-max-id": 0,
         "selector-pseudo-class-case": "lower",
         "selector-pseudo-class-parentheses-space-inside": "never",
         "selector-pseudo-element-case": "lower",
