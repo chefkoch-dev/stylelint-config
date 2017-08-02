@@ -36,7 +36,7 @@ Although neither CSS nor Sass do require strings to be quoted, we recommend tha
 * it helps general readability
 * there is no valid reason not to quote strings
 
-```
+```scss
 // Yep
 $direction: 'left';
 
@@ -46,7 +46,7 @@ $direction: left;
 
 #### Exceptions for quotes
 
-```
+```scss
 // Yep
 $font-type: sans-serif;
 
@@ -58,7 +58,7 @@ $font-type: 'sans-serif';
 
 If a string contains one or several single quotes, one might consider wrapping the string with double quotes (`"`) instead, in order to avoid escaping characters within the string.
 
-```
+```scss
 // Okay
 @warn 'You can\'t do that.';
 
@@ -70,7 +70,7 @@ If a string contains one or several single quotes, one might consider wrapping t
 
 URLs should be quoted as well, for the same reasons as above:
 
-```
+```scss
 // Yep
 .foo {
     background-image: url('/images/kittens.jpg');
@@ -90,7 +90,7 @@ In Sass, _number_ is a data type including everything from unitless numbers to 
 
 Numbers should display leading zeros before a decimal value less than one. Never display trailing zeros.
 
-```
+```scss
 // Yep 
 .foo {
     padding: 2em;
@@ -108,7 +108,7 @@ Numbers should display leading zeros before a decimal value less than one. Never
 
 When dealing with lengths, a 0 value should never ever have a unit.
 
-```
+```scss
 // Yep
 margin: 0;
 
@@ -124,7 +124,7 @@ Beware, this practice should be limited to lengths only. Having a unitless zero 
 
 When using a color more than once, store it in a variable (prefixed with `$color-`) with a standardized name representing the color like `$color-sushi` (use [chir.ag's Name That Color](http://chir.ag/projects/name-that-color/#7BA344) to find the name). Since this method leads to unique color names which we do not want to spread around our code base (cannot reuse when the color changes), you need to map this color to an abstract second variable like `$color-brand-primary.` David Walsh has explained at length why this seemingly convoluted approach is a good idea: [Sass Color Variables That Don’t Suck](https://davidwalsh.name/sass-color-variables-dont-suck).
 
-```
+```scss
 $color-sushi: #7ba344;
 
 […]
@@ -144,7 +144,7 @@ Here is how a (S)CSS ruleset should be written (at least, according to most guid
 *   the closing brace (`}`) on its own new line
 *   a new line after the closing brace (`}`)
 
-```
+```scss
 // Yep
 .foo, .foo--bar,
 .baz {
@@ -170,7 +170,7 @@ Adding to those CSS-related guidelines, we want to pay attention to:
 *   mixin calls with `@content` coming after any nested selector
 *   no new line before a closing brace (`}`)
 
-```
+```scss
 // Yep
 .foo, .foo-bar,
 .baz {
@@ -211,7 +211,7 @@ Of course, there are cases where nesting is not only allowed, but recommended:
 *   use selector nesting for pseudo-classes and pseudo-elements
 *   use selector nesting for component-agnostic state classes such as .is-active
 
-```
+```scss
 // Yep
 .foo {
     color: red;
@@ -232,7 +232,7 @@ Of course, there are cases where nesting is not only allowed, but recommended:
 
 Last but not least, it may make sense to use the _[reverse parent selector](http://thesassway.com/intermediate/referencing-parent-selectors-using-ampersand#wait-theres-more)_ when styling an element because it happens to be contained within another specific element. This can help to keep everything about the component in the same place.
 
-```
+```scss
 // Yep
 .foo {
     // …
@@ -245,7 +245,7 @@ Last but not least, it may make sense to use the _[reverse parent selector](http
 
 This will compile to:
 
-```
+```scss
 // CSS
 .no-opacity .foo {
     display: none;
@@ -266,7 +266,7 @@ BEM splits components’ classes into three groups:
 
 To take an analogy (note, not an example):
 
-```
+```scss
 .person {}
 .person__head {}
 .person--tall {}
