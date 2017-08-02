@@ -1,6 +1,7 @@
 ## (S)CSS
 
-CSS is mainly written via Sass pre-processor at Chefkoch, though some projects may deviate from this. We follow a cherry-picked mixture of [cssguidelin.es](http://cssguidelin.es) and [sass-guidelin.es](http://sass-guidelin.es) for writing our SCSS files. All example snippets are sourced from [sass-guidelin.es](http://sass-guidelin.es/) / created by [Hugo Giraudel](http://hugogiraudel.com/) / [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en)
+CSS is mainly written via Sass pre-processor at Chefkoch, though some projects may deviate from this. We follow a cherry-picked mixture of [cssguidelin.es](http://cssguidelin.es) and [sass-guidelin.es](http://sass-guidelin.es) for writing our SCSS files.
+All example snippets are sourced from [sass-guidelin.es](http://sass-guidelin.es/) / created by [Hugo Giraudel](http://hugogiraudel.com/) / [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en)
 
 ### Syntax and Formatting
 
@@ -23,6 +24,7 @@ At a very high-level, we want:
 
           padding: 0 1em;
         }
+
 
 ### Quotes
 
