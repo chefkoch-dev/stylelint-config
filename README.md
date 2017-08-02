@@ -1,8 +1,10 @@
 ## Installation
 Install the required dependencies into your project:
+
     npm install --save-dev stylelint git+ssh://git@jira.chefkoch.de:7999/geist/chefkoch-style-linting.git
     
 Create a ```.stylelintrc``` configuration file in your project root directory with following content:
+
     {
       "extends": "chefkoch-style-linting"
     }
