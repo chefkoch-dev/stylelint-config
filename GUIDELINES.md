@@ -14,19 +14,19 @@ At a very high-level, we want:
 * meaningful use of whitespace
 
 ```
-    // Yep
-    .foo {
-        display: block;
-        overflow: hidden;
-        padding: 0 1em;
-    }
+// Yep
+.foo {
+    display: block;
+    overflow: hidden;
+    padding: 0 1em;
+}
 
-    // Nope
-    .foo {
-      display: block; overflow: hidden;
+// Nope
+.foo {
+  display: block; overflow: hidden;
 
-      padding: 0 1em;
-    }
+  padding: 0 1em;
+}
 ```
 
 
@@ -39,36 +39,46 @@ Although neither CSS nor Sass do require strings to be quoted, we recommend tha
 * it helps general readability
 * there is no valid reason not to quote strings
 
-    // Yep
-    $direction: 'left';
+```
+// Yep
+$direction: 'left';
 
-    // Nope
-    $direction: left;
-
+// Nope
+$direction: left;
+```
 
 
 #### Exceptions for quotes
 
-    // Yep
-    $font-type: sans-serif;
-    
-    // Nope
-    $font-type: 'sans-serif';
+```
+// Yep
+$font-type: sans-serif;
+
+// Nope
+$font-type: 'sans-serif';
+```
+
+
 
 #### Strings containing quotes
 
 If a string contains one or several single quotes, one might consider wrapping the string with double quotes (`"`) instead, in order to avoid escaping characters within the string.
 
+```
 // Okay
 @warn 'You can\'t do that.';
 
 // Okay
 @warn "You can't do that.";
+```
+
+
 
 ### URLs
 
 URLs should be quoted as well, for the same reasons as above:
 
+```
 // Yep
 .foo {
     background-image: url('/images/kittens.jpg');
@@ -78,15 +88,21 @@ URLs should be quoted as well, for the same reasons as above:
 .foo {
   background-image: url(/images/kittens.jpg);
 }
+```
+
+
 
 ### Numbers
 
 In Sass, _number_ is a data type including everything from unitless numbers to lengths, durations, frequencies, angles and so on. This allows calculations to be run on such measures.
 
+
+
 #### Zeros
 
 Numbers should display leading zeros before a decimal value less than one. Never display trailing zeros.
 
+```
 // Yep 
 .foo {
     padding: 2em;
@@ -98,30 +114,40 @@ Numbers should display leading zeros before a decimal value less than one. Never
   padding: 2.0em;
   opacity: .5;
 }
+```
+
+
 
 #### Units
 
 When dealing with lengths, a 0 value should never ever have a unit.
 
+```
 // Yep
 margin: 0;
 
 // Nope
 margin: 0px;
+```
 
 Beware, this practice should be limited to lengths only. Having a unitless zero for a time property such as transition-delay is not allowed. Theoretically, if a unitless zero is specified for a duration, the declaration is deemed invalid and should be discarded. Not all browsers are that strict, but some are. Long story short: only omit the unit for lengths.
 
 **Note:** There are more good practices dealing with numbers at [http://sass-guidelin.es/#numbers](http://sass-guidelin.es/#numbers) and we recommend to follow them.
 
+
+
 ### Colors and Variables
 
 When using a color more than once, store it in a variable (prefixed with `$color-`) with a standardized name representing the color like `$color-sushi` (use [chir.ag's Name That Color](http://chir.ag/projects/name-that-color/#7BA344) to find the name). Since this method leads to unique color names which we do not want to spread around our code base (cannot reuse when the color changes), you need to map this color to an abstract second variable like `$color-brand-primary.` David Walsh has explained at length why this seemingly convoluted approach is a good idea: [Sass Color Variables That Don’t Suck](https://davidwalsh.name/sass-color-variables-dont-suck).
 
+```
 $color-sushi: #7ba344;
 
 […]
 
 $color-brand-primary: $color-sushi;
+```
+
 
 ### The actual (S)CSS Ruleset
 
@@ -135,6 +161,7 @@ Here is how a (S)CSS ruleset should be written (at least, according to most guid
 *   the closing brace (}) on its own new line
 *   a new line after the closing brace `}  
 
+```
 // Yep
 .foo, .foo--bar,
 .baz {
@@ -149,6 +176,7 @@ Here is how a (S)CSS ruleset should be written (at least, according to most guid
   display: block;
   overflow: hidden;
   margin: 0 auto }
+```
 
 Adding to those CSS-related guidelines, we want to pay attention to:
 
@@ -159,6 +187,7 @@ Adding to those CSS-related guidelines, we want to pay attention to:
 *   mixin calls with `@content` coming after any nested selector
 *   no new line before a closing brace (`}`)
 
+```
 // Yep
 .foo, .foo-bar,
 .baz {
@@ -178,10 +207,15 @@ Adding to those CSS-related guidelines, we want to pay attention to:
       overflow: visible;
     }
 }
+```
+
+
 
 ### Declaration Sorting
 
 There is a lot of [discussion](http://css-tricks.com/poll-results-how-do-you-order-your-css-properties/) around the [order of declarations](http://sass-guidelin.es/#declaration-sorting). The different factions are _alphabetical order_, _order by type_ and _fuck it, random_. Find an approach that works for you and your team until we have implemented automated declaration sorting with either [csscomb.com](http://csscomb.com) or [stylelint.io](http://stylelint.io/) (with [stylefmt](https://github.com/morishitter/stylefmt)).
+
+
 
 ### Selector Nesting
 
@@ -191,6 +225,8 @@ We recommend to **avoid selector nesting as much as** **possible** for reasons 
 
 It can make sense to use moderate nesting, but please keep to [the Inception rule](http://thesassway.com/beginner/the-inception-rule)(never nest more than 3 levels deep).
 
+
+
 #### Exceptions
 
 Of course, there are cases where nesting is not only allowed, but recommended:
@@ -198,6 +234,7 @@ Of course, there are cases where nesting is not only allowed, but recommended:
 *   use selector nesting for pseudo-classes and pseudo-elements
 *   use selector nesting for component-agnostic state classes such as .is-active
 
+```
 // Yep
 .foo {
     color: red;
@@ -214,10 +251,11 @@ Of course, there are cases where nesting is not only allowed, but recommended:
         font-weight: bold;
     }
 }
+```
 
 Last but not least, it may make sense to use the _[reverse parent selector](http://thesassway.com/intermediate/referencing-parent-selectors-using-ampersand#wait-theres-more)_ when styling an element because it happens to be contained within another specific element. This can help to keep everything about the component in the same place.
 
-
+```
 // Yep
 .foo {
     // …
@@ -226,14 +264,18 @@ Last but not least, it may make sense to use the _[reverse parent selector](http
       display: none;
     }
 }
-
+```
 
 This will compile to:
 
+```
 // CSS
 .no-opacity .foo {
     display: none;
 }
+```
+
+
 
 ### Naming Conventions
 
@@ -249,10 +291,11 @@ BEM splits components’ classes into three groups:
 
 To take an analogy (note, not an example):
 
+```
 .person {}
 .person__head {}
 .person--tall {}
-
+```
 
 Elements are delimited with two (2) underscores (__), and Modifiers are delimited by two (2) hyphens (--).
 
