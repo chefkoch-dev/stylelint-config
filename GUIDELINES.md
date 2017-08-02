@@ -116,7 +116,9 @@ margin: 0;
 margin: 0px;
 ```
 
-    Beware, this practice should be limited to lengths only. Having a unitless zero for a time property such as transition-delay is not allowed. Theoretically, if a unitless zero is specified for a duration, the declaration is deemed invalid and should be discarded. Not all browsers are that strict, but some are. Long story short: only omit the unit for lengths.    
+    **Beware, this practice should be limited to lengths only. Having a unitless zero for a time property such as transition-delay is not allowed.
+    Theoretically, if a unitless zero is specified for a duration, the declaration is deemed invalid and should be discarded. Not all browsers are that
+    strict, but some are. Long story short: only omit the unit for lengths.**    
 **Note:** There are more good practices dealing with numbers at [http://sass-guidelin.es/#numbers](http://sass-guidelin.es/#numbers) and we recommend to follow them.
 
 ### Colors and Variables
