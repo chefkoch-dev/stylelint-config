@@ -1,0 +1,10 @@
+{
+  "name": "style-linting",
+  "version": "1.0.0",
+  "description": "Configuration for stylelint",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@jira.chefkoch.de:7999/geist/style-linting.git"
+  }
+}
