@@ -11,8 +11,7 @@ At a very high-level, we want:
 * multi-line CSS
 * meaningful use of whitespace
 
-```
-:::css
+```scss
 // Yep
 .foo {
     display: block;
