@@ -12,7 +12,7 @@ At a very high-level, we want:
 * meaningful use of whitespace
 
 ```
-:::scss
+:::css
 // Yep
 .foo {
     display: block;
