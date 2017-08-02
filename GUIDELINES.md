@@ -3,6 +3,8 @@
 CSS is mainly written via Sass pre-processor at Chefkoch, though some projects may deviate from this. We follow a cherry-picked mixture of [cssguidelin.es](http://cssguidelin.es) and [sass-guidelin.es](http://sass-guidelin.es) for writing our SCSS files.
 All example snippets are sourced from [sass-guidelin.es](http://sass-guidelin.es/) / created by [Hugo Giraudel](http://hugogiraudel.com/) / [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en)
 
+
+
 ### Syntax and Formatting
 
 At a very high-level, we want:
@@ -11,43 +13,47 @@ At a very high-level, we want:
 * multi-line CSS
 * meaningful use of whitespace
 
-        // Yep
-        .foo {
-            display: block;
-            overflow: hidden;
-            padding: 0 1em;
-        }
+```
+    // Yep
+    .foo {
+        display: block;
+        overflow: hidden;
+        padding: 0 1em;
+    }
 
-        // Nope
-        .foo {
-          display: block; overflow: hidden;
+    // Nope
+    .foo {
+      display: block; overflow: hidden;
 
-          padding: 0 1em;
-        }
+      padding: 0 1em;
+    }
+```
 
 
 ### Quotes
 
 Although neither CSS nor Sass do require strings to be quoted, we recommend that **strings should always be wrapped with single quotes** (`'`) in Sass. Besides consistency with other languages, including CSS’ cousin JavaScript, there are several reasons for this choice:
 
-*   color names are treated as colors when unquoted, which can lead to serious issues
-*   most syntax highlighters will choke on unquoted strings
-*   it helps general readability
-*   there is no valid reason not to quote strings
+* color names are treated as colors when unquoted, which can lead to serious issues
+* most syntax highlighters will choke on unquoted strings
+* it helps general readability
+* there is no valid reason not to quote strings
 
-        // Yep
-        $direction: 'left';
+    // Yep
+    $direction: 'left';
 
-        // Nope
-        $direction: left;
+    // Nope
+    $direction: left;
+
+
 
 #### Exceptions for quotes
 
-// Yep
-$font-type: sans-serif;
-
-// Nope
-$font-type: 'sans-serif';
+    // Yep
+    $font-type: sans-serif;
+    
+    // Nope
+    $font-type: 'sans-serif';
 
 #### Strings containing quotes
 
