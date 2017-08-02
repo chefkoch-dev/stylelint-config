@@ -12,7 +12,7 @@ Create a `.stylelintrc` configuration file in your project root directory with f
   "extends": "chefkoch-style-linting"
 }
 ```
-##
+
 ## CLI Usage
 You are now able to call the command line interface of stylelint:
 ```
