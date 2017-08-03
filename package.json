@@ -7,6 +7,10 @@
     "type": "git",
     "url": "ssh://git@jira.chefkoch.de:7999/geist/chefkoch-style-linting.git"
   },
+  "devDependencies": {
+    "stylelint": "^8.0.0",
+    "tape": "^4.8.0"
+  },
   "peerDependencies": {
     "stylelint": "^8.0.0"
   }
