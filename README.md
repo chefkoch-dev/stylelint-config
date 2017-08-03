@@ -85,6 +85,15 @@ following settings:
 
 After that is done you should see warnings in your styles, when these do not fit the defined linting rules.
 
+## Testing
+
+If you change/update the linting rules, or update stylelint, please
+validate the changes by testing the rules with:
+
+```
+npm run test
+```
+
 ## More Information
 
 You can find more information through the following links:
