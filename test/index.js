@@ -36,8 +36,8 @@ describe('Flags warnings with valid CSS', function(assert) {
         assert.ok(data.errored, 'Did error');
         assert.equal(data.results[0].warnings.length, 1, 'Flags one warnings');
         assert.equal(data.results[0].warnings[0].text, 'Expected a leading zero (number-leading-zero)', 'Correct warning text');
-        assert.equal(data.results[0].warnings[0].rule, 'Number-leading-zero', 'Correct rule flagged');
-        assert.equal(data.results[0].warnings[0].severity, 'Error', 'Correct severity flagged');
+        assert.equal(data.results[0].warnings[0].rule, 'number-leading-zero', 'Correct rule flagged');
+        assert.equal(data.results[0].warnings[0].severity, 'error', 'Correct severity flagged');
         assert.equal(data.results[0].warnings[0].line, 2, 'Correct line number');
         assert.equal(data.results[0].warnings[0].column, 10, 'Correct column number');
 
