@@ -1,11 +1,11 @@
 {
-  "name": "chefkoch-style-linting",
+  "name": "chefkoch-stylelint-config",
   "version": "1.0.0",
   "description": "Configuration for stylelint",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "ssh://git@jira.chefkoch.de:7999/geist/chefkoch-style-linting.git"
+    "url": "git@github.com:chefkoch-dev/stylelint-config.git"
   },
   "devDependencies": {
     "stylelint": "^8.0.0",
