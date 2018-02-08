@@ -9,7 +9,7 @@ Create a `.stylelintrc` configuration file in your project root directory with f
 
 ```
 {
-  "extends": "chefkoch-style-linting"
+  "extends": "chefkoch-stylelint-config"
 }
 ```
 
