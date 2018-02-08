@@ -2,24 +2,7 @@
 Install the required dependencies into your project:
 
 ```
-npm install --save-dev stylelint git+ssh://git@jira.chefkoch.de:7999/geist/chefkoch-style-linting.git
-```
-
-In case of a failing build, telling you something like that:
-
-```
-npm ERR! Cloning into bare repository '/opt/bamboo/.npm/_git-remotes/git-ssh-git-jira-chefkoch-de-7999-geist-chefkoch-style-linting-git-43b4d434'...
-npm ERR! Host key verification failed.
-npm ERR! fatal: Could not read from remote repository.
-npm ERR! 
-npm ERR! Please make sure you have the correct access rights
-npm ERR! and the repository exists.
-```
-
-you need to put the hosts ssh key into the `known_hosts` file. Just put this into your `Dockerfile`:
-
-```
-RUN ssh-keyscan -p 7999 -H jira.chefkoch.de >> /etc/ssh/ssh_known_hosts
+npm install --save-dev chefkoch-stylelint-config
 ```
 
 Create a `.stylelintrc` configuration file in your project root directory with following content:
