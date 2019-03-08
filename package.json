@@ -1,6 +1,6 @@
 {
   "name": "chefkoch-stylelint-config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Configuration for stylelint",
   "main": "index.js",
   "repository": {
@@ -8,11 +8,11 @@
     "url": "git@github.com:chefkoch-dev/stylelint-config.git"
   },
   "devDependencies": {
-    "stylelint": "^8.0.0",
+    "stylelint": "^9.0.0",
     "tape": "^4.8.0"
   },
   "peerDependencies": {
-    "stylelint": "^8.0.0"
+    "stylelint": "^9.0.0"
   },
   "scripts": {
     "test": "node test"
