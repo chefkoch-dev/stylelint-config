@@ -1,0 +1,24 @@
+sudo: false
+git:
+  depth: 3
+branches:
+  only:
+  - /.*/
+language: node_js
+node_js:
+- node
+cache:
+  directories:
+  - "$HOME/.npm"
+  - node_modules
+install:
+- npm install
+script: npm run test
+deploy:
+  - provider: npm
+    email: ingo.reinhart@chefkoch.de
+    api_key: "$NPMJS_TOKEN"
+    skip_cleanup: true
+    on:
+      tags: true
+      repo: chefkoch-dev/stylelint-config
