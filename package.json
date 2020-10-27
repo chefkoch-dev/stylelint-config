@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "stylelint": "^9.0.0",
-    "tape": "^4.8.0"
+    "tape": "^4.13.3"
   },
   "peerDependencies": {
     "stylelint": "^9.0.0"
