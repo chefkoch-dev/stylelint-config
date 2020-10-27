@@ -2,7 +2,7 @@
 
 module.exports = {
     "rules": {
-        "at-rule-blacklist": ["extend"],
+        "at-rule-disallowed-list": ["extend"],
         "at-rule-name-case": "lower",
         "at-rule-name-space-after": "always-single-line",
         "at-rule-semicolon-newline-after": "always",
@@ -47,7 +47,7 @@ module.exports = {
         "declaration-colon-newline-after": "always-multi-line",
         "declaration-colon-space-after": "always-single-line",
         "declaration-colon-space-before": "never",
-        "declaration-property-value-blacklist": {
+        "declaration-property-value-disallowed-list": {
             "/^transition/": [
                 "/all/"
             ],
